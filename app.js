@@ -63,9 +63,13 @@ multiAuthor.addEventListener('click', function(){
 
 search.addEventListener('click', function(){
     var keyword = document.getElementById('search-input').value.toLowerCase();
-    var sortedData = books.filter(a => Object.values(a).filter(b => b.toString().toLowerCase().indexOf(keyword) != -1).length > 0);
 
-    displayBooks(sortedData);
+    if(keyword){
+        var sortedData = books.filter(a => Object.values(a).filter(b => b.toString().toLowerCase().indexOf(keyword) != -1).length > 0);
+        displayBooks(sortedData);
+     } else {
+        alert('Please input a keyword');
+     }
 });
 
 displayBooks(books);
