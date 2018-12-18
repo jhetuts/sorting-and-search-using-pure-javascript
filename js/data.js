@@ -53,7 +53,7 @@ var data = [
         author : 'Brian K. Vaughan',
         rating : 4.4,
         releaseDate : 2012,
-        image : 'data/images/from-hell.jpg'
+        image : 'data/images/saga.jpg'
     },
     {
         title : 'Alack Sinner',

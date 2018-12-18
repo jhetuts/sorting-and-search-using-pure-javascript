@@ -55,13 +55,23 @@ img{
     padding: 4%;
     box-sizing: border-box;
 }
-
+.search input[type="search"]{
+    padding: 5px;
+    border-radius: 4px;
+    outline: none;
+    max-width: 320px;
+    min-width: 300px;
+    box-sizing: border-box;
+}
 @media(max-width: 768px){
     .container{
         padding: 0 5%;
     }
     #books .book-block{
         width: 48%;
+    }
+    .search input[type='search']{
+        min-width: 217px;
     }
 }
 /* @media(max-width: 767px){

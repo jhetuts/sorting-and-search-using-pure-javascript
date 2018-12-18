@@ -4,6 +4,7 @@ var sortByTitle = document.getElementById('sort-by-title'),
     sortByRating = document.getElementById('sort-by-rating'),
     sortBydate = document.getElementById('sort-by-date'),
     multiAuthor = document.getElementById('multi-author'),
+    search = document.getElementById('search-button'),
     doc = document.getElementById('books');
 
 
@@ -11,7 +12,7 @@ const books = data;
 
 function displayBooks(books){
     doc.innerHTML = "";
-    if(books.length > -1){
+    if(books.length > 0){
         for(var i = 0; i < books.length; i++){
             if(books[i].rating == ''){
                 books[i].rating = "No rating yet";
@@ -57,8 +58,13 @@ sortBydate.addEventListener('click', function(){
 
 multiAuthor.addEventListener('click', function(){
     var sortedData = books.filter(a => a.author.indexOf(',') != -1);
+    displayBooks(sortedData);
+});
 
-    console.log(sortedData)
+search.addEventListener('click', function(){
+    var keyword = document.getElementById('search-input').value.toLowerCase();
+    var sortedData = books.filter(a => Object.values(a).filter(b => b.toString().toLowerCase().indexOf(keyword) != -1).length > 0);
+
     displayBooks(sortedData);
 });
 
