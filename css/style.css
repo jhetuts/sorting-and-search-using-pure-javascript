@@ -74,8 +74,8 @@ img{
         min-width: 217px;
     }
 }
-/* @media(max-width: 767px){
+@media(max-width: 767px){
     #books .book-block{
         width: 100%;
     }
-} */
+}
